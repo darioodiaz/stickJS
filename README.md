@@ -22,11 +22,11 @@ API
 ===
 
 stickJS.init(gamepadNumber)
-=============             =
+             
 gamepadNumber: the number of the connected gamepad (0 if only one gamepad is connected)
 
 stickJS.on(eventName, function(gamepad, value) )
-===========                   =
+                   
 eventName: one of the following
 
 	* D-pad
