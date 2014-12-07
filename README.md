@@ -1,7 +1,7 @@
 stickJS
 =======
 
-A lillte JS library to control joysticks in web browsers via Gamepad API.
+A little JS library to control joysticks in web browsers via Gamepad API.
 
 A simple library that uses Gamepad API to control joysticks. Since browsers dont have a FULL implementation of the Gamepad spec I made this library.
 
@@ -12,20 +12,20 @@ Quick example
 
 - Import the lib <script src="stick.js"></script>
 
-- stickJS.init(0) (this is the number of the connected jotstick it can be from 0 to 3, this will put in the console if the library can get the gamepad, you must call this twice)
+- stickJS.init() (this initialize the library, connect you gamepads and watch the browser console)
 
-- stickJS.on("left", function(gamepad, value) {
+- stickJS.GAMEPAD_0.on("left", function(gamepad, value) {
            //your code here :D
 });
 
 API
 ===
 
-stickJS.init(gamepadNumber)
-             
-gamepadNumber: the number of the connected gamepad (0 if only one gamepad is connected)
+stickJS.init()
 
-stickJS.on(eventName, function(gamepad, value) )
+start the library to search conencted gamepad, the first connected gamepad will be mapped to GAMEPAD_0, the second GAMEPAD_1 etc (max gamepads 4).
+
+stickJS.GAMEPAD_X.on(eventName, function(gamepad, value) )
                    
 eventName: one of the following
 
@@ -50,9 +50,13 @@ function: the callback function to call, the parameters will be pass
 
 Future features
 ===============
-- Examples u.u
-- Multiple gamepads support
 - Calibration (because some gamepads hasnt the same button mapping)
 - Store the calibration for each gamepad (calibrate one time and no more ;) )
 - Auto-mapping buttons for most commons gamepads (for avoid calibration :) )
 - Any other idea :P
+
+CHANGELOG
+=========
+v 0.2:
+- init() change, no more gamepad number, now the gamepad are mapped automaticlly
+- examples added
